@@ -7,6 +7,10 @@
   list-style: none;
 }
 
+body {
+  background-color: #e8e8e8;
+}
+
 body h1,
 h2,
 h3,
@@ -114,6 +118,93 @@ h6 {
   font-style : italic;
 }
 
+
+/*-- ItemCount --*/
+.container-contador {
+  display        : flex;
+  justify-content: center;
+}
+
+.contador {
+  display                : flex;
+  justify-content        : center;
+  align-items            : center;
+  background-color       : #979292e5;
+  margin-top             : 20px;
+  background             : rgba(255, 255, 255, 0.25);
+  box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter        : blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius          : 10px;
+  border                 : 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-contador {
+  padding    : 10px;
+  margin     : 20px;
+  font-size  : 20px;
+  font-weight: 700;
+  cursor     : pointer;
+}
+
+.btn-contador:hover {
+  background-color: #001D26;
+  color           : antiquewhite;
+}
+
+/*-- Item --*/
+.container-cards {
+  display        : flex;
+  flex-wrap      : wrap;
+  justify-content: space-around;
+  gap            : 30PX;
+  margin-top     : 30px;
+  padding        : 20px;
+}
+
+.container-cards .card {
+  width        : 300px;
+  height       : 400px;
+  text-align   : center;
+  background   : rgb(211, 211, 211);
+  border       : 3px inset rgb(179, 164, 164);
+  box-shadow   : inset 20px 20px 60px #c5c5c5, inset -20px -20px 60px #ffffff;
+  transition   : all .5s ease-in-out;
+  border-radius: .5rem 3rem;
+  color        : #8a8989;
+  cursor       : pointer;
+}
+
+.container-cards .card:hover {
+  transform : translateY(-15px);
+  transition: all .5s ease-in-out;
+}
+
+.container-cards .card img {
+  height       : 230px;
+  width        : 100%;
+  border-bottom: 2px solid #8a8989;
+  border-radius: 0.5rem 3rem 0 0;
+  transition   : all 4s ease;
+}
+
+.container-cards .card img:hover {
+  transform: rotateY(-360deg);
+}
+
+.container-cards .card .card-titulo {
+  color    : #000;
+  font-size: 1.5rem;
+}
+
+.container-cards .card .card-precio {
+  font-weight   : bold;
+  color         : #000;
+  font-size     : 1.1rem;
+  padding-bottom: 5px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------ */
 
 /* MEDIA QUERIES */
 @media screen and (max-width:790px) {

@@ -5,31 +5,27 @@ import ItemList from "./ItemList";
 
 const ItemListContainer = ({ greeting }) => {
 	const [listProducts, setListProducts] = useState([]);
-	const getProducts = new Promise((resolve, reject) => {
-		
-		if (Data.length === 0) {
-			reject(new Error("No hay productos para mostrar"));
-		}
-		
-		setTimeout(() => {
-			resolve(Data);
-		}, 2000);
-	});
 
 	useEffect(() => {
-		getProducts
-			.then((res) => {
-				setListProducts(res);
-				console.log(res);
-			})
-			
-			.catch((error) => {
-				console.log("La llamada falló", error);
-			})
-			.finally(() => {
-				console.log("desactivar texto");
-			});
+		const getProducts = new Promise((resolve, reject) => {
+			if (Data.length === 0) {
+				reject(new Error("No hay productos para mostrar"));
+			}
+
+			setTimeout(() => {
+				resolve(Data);
+			}, 2000);
+		});
+
+		getProducts.then((res) => setListProducts(res));
+		getProducts.then((res) => console.log(res));
+
+		getProducts.catch((error) => {
+			console.log("La llamada falló", error);
+		})
+
 	}, []);
+
 
 	return (
 		<>
@@ -37,7 +33,7 @@ const ItemListContainer = ({ greeting }) => {
 				{greeting}
 			</div>
 			<ItemCount />
-			<ItemList  computers={listProducts} />
+			<ItemList computers={listProducts} />
 			<h3>Cargando...</h3>
 		</>
 	);

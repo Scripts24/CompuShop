@@ -17,7 +17,7 @@ const App = () => {
         <Route
           exact
           path="/catalogue"
-          element={<ItemListContainer greeting={"¡Bienvenido a CompuShop!"} />}
+          element={<ItemListContainer greeting={"TU TIENDA ONLINE"} />}
         />
         <Route
           exact

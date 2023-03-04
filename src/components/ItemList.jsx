@@ -10,6 +10,8 @@ const ItemList = ({ computers }) => {
                         id={computer.id}
                         title={computer.title}
                         price={computer.price}
+                        stock={computer.stock}
+                        category={computer.category}
                         image={computer.image}
                     />
                 ))}

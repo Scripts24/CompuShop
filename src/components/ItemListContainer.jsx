@@ -1,23 +1,25 @@
 import { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
 import Data from "../data.json";
 import ItemList from "./ItemList";
+import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
-	const [listProducts, setListProducts] = useState([]);
+	const [computers, setComputers] = useState([]);
+	const { category } = useParams();
+	console.log(category)
 
 	useEffect(() => {
 		const getProducts = new Promise((resolve, reject) => {
 			if (Data.length === 0) {
 				reject(new Error("No hay productos para mostrar"));
 			}
-
-			setTimeout(() => {
+			resolve(Data);
+			/*setTimeout(() => {
 				resolve(Data);
-			}, 2000);
+			}, 2000);*/
 		});
 
-		getProducts.then((res) => setListProducts(res));
+		getProducts.then((res) => setComputers(res));
 		getProducts.then((res) => console.log(res));
 
 		getProducts.catch((error) => {
@@ -26,15 +28,14 @@ const ItemListContainer = ({ greeting }) => {
 
 	}, []);
 
+	const catFilter = computers.filter((computer) => computer.category === category);
 
 	return (
 		<>
-			<div className=" greeting animate__animated animate__flash animate__slow">
+			<div className="greeting animate__animated animate__flash animate__slow">
 				{greeting}
 			</div>
-			<ItemCount />
-			<ItemList computers={listProducts} />
-			<h3>Cargando...</h3>
+			{category ? <ItemList computers={catFilter} /> :<ItemList computers={computers} />} 
 		</>
 	);
 };

@@ -21,6 +21,14 @@ h6 {
 }
 
 /*-- NavBar --*/
+.link-nav {
+  text-decoration: none;
+  color          : black;
+}
+
+.link-nav:hover {
+  color: antiquewhite;
+}
 
 .navbar {
   height          : 4rem;
@@ -44,10 +52,14 @@ h6 {
   border-radius: 50%;
 }
 
+.link-title {
+  text-decoration: none;
+  color          : whitesmoke;
+}
+
 .navbar h1 {
   font-size   : 1.5rem;
   padding-left: 0.5rem;
-  color       : whitesmoke;
 }
 
 .navbar ul {
@@ -204,18 +216,46 @@ h6 {
   padding-bottom: 5px;
 }
 
-.container-cards .card .card-detalle {
-  cursor       : pointer;
-  border-radius: 3px;
-  padding      : 5px;
-  font-size    : 1rem;
-  font-weight  : 700;
+.container-cards .card .link-detalle {
+  cursor         : pointer;
+  border-radius  : 3px;
+  padding        : 5px;
+  font-size      : 1rem;
+  font-weight    : 700;
+  text-decoration: none;
+  color          : #000;
 }
 
-.container-cards .card .card-detalle:hover {
+.container-cards .card .link-detalle:hover {
   background-color: #001D26;
   color           : antiquewhite;
 }
+
+/*-- ItemDetail --*/
+
+.container-card-details{
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  
+}
+
+.card-details{
+  width: 510px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 3px solid #001D26;
+  border-radius: 25px;
+}
+
+.card-details img{
+  width: 500px;
+  height: 400px;
+  border-radius: 25px 25px 0 0;
+  border-bottom: 3px solid #001D26;
+}
+
 
 /* ------------------------------------------------------------------------------------------------------------ */
 

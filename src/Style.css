@@ -216,38 +216,6 @@ h6 {
 }
 
 
-/*-- ItemCount --*/
-.container-contador {
-  display        : flex;
-  justify-content: center;
-}
-
-.contador {
-  display                : flex;
-  justify-content        : center;
-  align-items            : center;
-  background-color       : #979292e5;
-  margin-top             : 20px;
-  background             : rgba(255, 255, 255, 0.25);
-  box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter        : blur(4px);
-  -webkit-backdrop-filter: blur(4px);
-  border-radius          : 10px;
-  border                 : 1px solid rgba(255, 255, 255, 0.18);
-}
-
-.btn-contador {
-  padding    : 10px;
-  margin     : 20px;
-  font-size  : 20px;
-  font-weight: 700;
-  cursor     : pointer;
-}
-
-.btn-contador:hover {
-  background-color: #001D26;
-  color           : antiquewhite;
-}
 
 /*-- Item --*/
 .container-cards {
@@ -318,27 +286,79 @@ h6 {
 
 /*-- ItemDetail --*/
 
-.container-card-details {
+.container-details {
+  height         : 100vh;
   display        : flex;
+  flex-wrap      : wrap;
   justify-content: center;
-  padding        : 40px;
+  align-items    : center;
+  gap            : 40px;
+  padding: 20px;
+}
 
+.img-details {
+  width        : 500px;
+  height       : 400px;
+  border       : 3px solid #001D26;
+  border-radius: 25px;
 }
 
 .card-details {
-  width         : 510px;
-  display       : flex;
-  flex-direction: column;
-  align-items   : center;
-  border        : 3px solid #001D26;
-  border-radius : 25px;
+  width           : 500px;
+  height          : 400px;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 15px;
+  border          : 3px solid #001D26;
+  border-radius   : 25px;
+  background-color: rgba(255, 255, 255, 0.336);
 }
 
-.card-details img {
-  width        : 500px;
-  height       : 400px;
-  border-radius: 25px 25px 0 0;
-  border-bottom: 3px solid #001D26;
+.card-details .card-titulo {
+  font-size: 30px;
+}
+
+.card-details .card-category {
+  font-size: 25px;
+}
+
+.card-details .card-precio {
+  font-size: 22px;
+}
+
+/*-- ItemCount --*/
+.container-contador {
+  display        : flex;
+  justify-content: center;
+}
+
+.contador {
+  display                : flex;
+  justify-content        : center;
+  align-items            : center;
+  background-color       : #979292e5;
+  margin-top             : 20px;
+  background             : rgba(255, 255, 255, 0.25);
+  box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter        : blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius          : 10px;
+  border                 : 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-contador {
+  padding    : 10px;
+  margin     : 20px;
+  font-size  : 20px;
+  font-weight: 700;
+  cursor     : pointer;
+}
+
+.btn-contador:hover {
+  background-color: #001D26;
+  color           : antiquewhite;
 }
 
 
@@ -442,6 +462,11 @@ h6 {
   .slider-controler .swiper-button-next {
     left     : 80% !important;
     transform: translateX(-80%) !important;
+  }
+
+  .img-details {
+    width : 300px;
+    height: 250px;
   }
 }
 

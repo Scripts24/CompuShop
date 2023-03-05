@@ -32,7 +32,7 @@ const NavBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/category/${"Ofimatica"}`} className="link-nav">
+                    <Link to={`/category/${"Ofimática"}`} className="link-nav">
                         Ofimáticas
                     </Link>
                 </li>

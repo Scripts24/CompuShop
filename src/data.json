@@ -5,8 +5,8 @@
         "title": "EXO Smart L33E",
         "price": 106000,
         "category": "Notebook",
-        "stock": 18,
-        "description": "Notebook 14' Intel Celeron 4GB de RAM 64GB SSD",
+        "stock": 8,
+        "description": "Notebook EXO Smart L33E gris 14', Intel Celeron N4020 4GB de RAM 64GB SSD, Intel UHD Graphics 600 1366x768px Windows 10 Home",
         "image": "../src/assets/img/notebooks/EXO-L33E.jpg"
     },
 
@@ -15,8 +15,8 @@
         "title": "Lenovo V15",
         "price": 288000,
         "category": "Notebook",
-        "stock": 12,
-        "description": "Notebook 15.6' Intel Core I5 480gb SSD 16gb de RAM",
+        "stock": 3,
+        "description": "Notebook Lenovo V15 Intel Core I5 1135g7 SSD 480gb RAM 16gb Fhd 15.6' ",
         "image": "../src/assets/img/notebooks/Lenovo-Ryzen.jpg"
     },
 
@@ -25,8 +25,8 @@
         "title": "HP 15 Spruce",
         "price": 275500,
         "category": "Notebook",
-        "stock": 10,
-        "description": "Notebook 15.6 AMD Ryzen 5 5500U 8GB de RAM 256GB SSD",
+        "stock": 7,
+        "description": "Notebook HP 15-ef2126wm spruce blue 15.6, AMD Ryzen 5 5500U 8GB de RAM 256GB SSD, AMD Radeon RX Vega 7 1920x1080px ",
         "image": "../src/assets/img/notebooks/HP-15-spruce.jpg"
     },
 
@@ -35,8 +35,8 @@
         "title": "HP Victus",
         "price": 339000,
         "category": "Notebook",
-        "stock": 15,
-        "description": "Notebook 15.6' Intel Core I5 8gb RAM 512gb SSD",
+        "stock": 7,
+        "description": "Notebook Hp Victus 15-fa0031dx 8gb Ram 512gb Ssd Intel Core I5 Nvidia Geforce Gtx 1650 4gb Gddr6 15.6 Fhd 144hz Windows 11",
         "image": "../src/assets/img/notebooks/HPVictus.jpg"
     },
 
@@ -46,7 +46,7 @@
         "price": 345600,
         "category": "Gamer",
         "stock": 8,
-        "description": "Pc Gamer Armada Amd A12 16Gb Ram Video Radeon Wifi Fortnite",
+        "description": "Pc Gamer Armada RAM DDR4 16Gb SSD 240GB  Procesador AMD A12 9800E  Video Radeon R7 2gb Motherboard A320M Placa WiFi  Kit Gabinete Gamer con luces",
         "image": "../src/assets/img/gamers/AMD-A12.jpg"
     },
 
@@ -56,7 +56,7 @@
         "price": 412000,
         "category": "Gamer",
         "stock": 6,
-        "description": "Pc Gamer Completa Ryzen 5 5600g 16gb Ssd 480gb Monitor 24' ",
+        "description": "Pc Gamer Completa AMD Ryzen 5 5600g  RAM DDR4 16gb SSD 480gb Monitor 24' Mother A520M AM4 Gabinete gamer 3 coolers - Monitor Led 24' Full Hd ",
         "image": "../src/assets/img/gamers/AMD-Ryzen-5600g.jpg"
     },
 
@@ -65,8 +65,8 @@
         "title": "GTX 1650",
         "price": 325000,
         "category": "Gamer",
-        "stock": 15,
-        "description": "Pc Gamer completa Intel I5 10400 16gb Ram Nvidia Gtx 1650",
+        "stock": 5,
+        "description": "Pc Gamer completa SSD 480gb 16gb Ram Nvidia Gtx 1650 AMD RYZEN 5 4500 x8 nucleos 16 hilos con cooler - MSI A320M M2 DDR4 - Gabinete ATX SENTEY F10 - Windows 10 TRIAL 64 Bits - Monitor SAMSUNG 24' ",
         "image": "../src/assets/img/gamers/GTX-1650.jpg"
     },
 
@@ -75,8 +75,8 @@
         "title": "Intel 9na-Gen",
         "price": 246000,
         "category": "Gamer",
-        "stock": 20,
-        "description": "Pc Gamer completa Intel I5 9na Gen Ssd 480gb",
+        "stock": 7,
+        "description": "Pc Gamer completa Intel I5 9na Gen SSD 480gb RAM 8GB 2400MHZ DDR4 - NVIDIA GEFORCE GTX 1050 Ti 4GB - MSI/ASROCK H310M - Gabinete ATX SENTEY ", 
         "image": "../src/assets/img/gamers/Intel-15-9na-Gen.jpg"
     },
 
@@ -84,9 +84,9 @@
         "id": 9,
         "title": "AMD 3.5",
         "price": 110000,
-        "category": "Ofimatica",
+        "category": "Ofimática",
         "stock": 10,
-        "description": "Pc Oficina-hogar Amd 3.5ghz Completa + Monitor 19' ",
+        "description": "Pc Oficina-hogar Amd 3.5ghz Completa + Monitor 19' RAM 4GB Procesador AMD Dual core 3.5Ghz Mother FM2  Disco rígido 1Tb (1000Gb) o ssd 250gb según stock o elección del comprador",
         "image": "../src/assets/img/ofimatica/AMD-3.5ghz.jpg"
     },
 
@@ -94,7 +94,7 @@
         "id": 10,
         "title": "Bangho Lite",
         "price": 248400,
-        "category": "Ofimatica",
+        "category": "Ofimática",
         "stock": 9,
         "description": "Pc All In One Aio Bangho Lite E24 I3 24 Fhd Ssd 480 8gb Free",
         "image": "../src/assets/img/ofimatica/Bangho-All.jpg"
@@ -104,19 +104,19 @@
         "id": 11,
         "title": "Dell I5",
         "price": 91000,
-        "category": "Ofimatica",
-        "stock": 15,
-        "description": "Pc Completa Dell Intel Core I5 16 Gb 500 Gb Monitor 17' ",
+        "category": "Ofimática",
+        "stock": 10,
+        "description": "Pc Completa Dell Intel Core I5 3.2 Ghz RAM 16 Gb DDR3 HDD 500  Monitor 17' 8 puertos USB Placa WiFi",
         "image": "../src/assets/img/ofimatica/Dell-15.jpg"
     },
 
     {
         "id": 12,
         "title": "Lenovo AIO",
-        "price": 2100200,
-        "category": "Ofimatica",
-        "stock": 2,
-        "description": "Pc All In One Lenovo Ryzen 5 Dd 1000gb+ssd 256gb Ram 12gb 21.5 Fhd",
+        "price": 465000,
+        "category": "Ofimática",
+        "stock": 4,
+        "description": "Pc All In One Lenovo AMD Ryzen 5 Dd 1000gb SSD 256gb RAM 12gb Monitor 21.5' Fhd - Bluetooth - WiFi",
         "image": "../src/assets/img/ofimatica/Lenovo-All.jpg"
     }
 

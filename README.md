@@ -28,14 +28,14 @@
 ## Pasos para la creación del proyecto
 
 * En CMD escribir los siguientes comandos:
-   1. cd desktop
-   1. npm init vite@latest
-   1. Nombre del proyecto
-   1. Elegir React
-   1. Luego elegir Javascript
-   1. cd seguido del nombre del proyecto
-   1. npm install
-   1. code . para abrir el proyecto en VSC (también se puede abrir arrastrando la carpeta)
+    - cd desktop
+    - npm init vite@latest
+    - Nombre del proyecto
+    - Elegir React
+    - Luego elegir Javascript
+    - cd seguido del nombre del proyecto
+    npm install
+    - code . para abrir el proyecto en VSC (también se puede abrir arrastrando la carpeta)
  * En VSC abrir la Terminal y escribir **npm run dev** (ejecutar cada vez que se abre el proyecto)
  * En la dirección de _local host_ que aparece, utilizar la tecla _ctrl + click_ para abrir el proyecto en el navegador.
 
@@ -46,7 +46,7 @@
 
  | Nombre | Apellido | Email |
  |--------|----------|---|
- | Patricia | Atanasoff | pato.atanasoff@gmail.com
+ | Patricia | Atanasoff | pato.atanasoff0815@gmail.com
 
 
 

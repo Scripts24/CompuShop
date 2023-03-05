@@ -1,0 +1,60 @@
+# Proyecto ecommerce CompuShop
+
+### Realizado en el curso de React, el cual es el último módulo de la carrera Front-End dictada por [CoderHouse](https://www.coderhouse.com)
+
+## Descripción del proyecto
+
+### El mismo trata sobre una tienda online de venta de computadoras, que consta de 3 categorías: Notebooks, Gamers y Ofimáticas. Una vez elegida la categoría, ésta mostrará los productos disponibles y de encontrar un producto de interés al hacer click en "Ver detalles" será redirigido a otra pantalla que mostrará la descripción del mismo, pudiendo elegir la cantidad y agregar al carrito para continuar con el proceso de compra, como también volver al catálogo para ver otras productos y si lo desea seguir agregando al carrito.
+---
+
+## Vista previa del proyecto
+
+![Navegación por el ecoommerce](./src/assets/navegacion.gif)
+
+---
+## Recursos y herramientas utilizados
+
+1. Editor de código: Visual studio code
+1. Node Js
+1. Vite Js
+1. Google Fonts
+1. Bootstrap Icons 
+1. Animate Style
+1. Swiper js
+1. Css puro
+1. React-router-dom
+1. Neumorphism
+---
+## Pasos para la creación del proyecto
+
+* En CMD escribir los siguientes comandos:
+   1. cd desktop
+   1. npm init vite@latest
+   1. Nombre del proyecto
+   1. Elegir React
+   1. Luego elegir Javascript
+   1. cd seguido del nombre del proyecto
+   1. npm install
+   1. code . para abrir el proyecto en VSC (también se puede abrir arrastrando la carpeta)
+ * En VSC abrir la Terminal y escribir **npm run dev** (ejecutar cada vez que se abre el proyecto)
+ * En la dirección de _local host_ que aparece, utilizar la tecla _ctrl + click_ para abrir el proyecto en el navegador.
+
+ #### Para más información visite [React](https://es.reactjs.org/) y [Vite](https://vitejs.dev/)
+
+ ---
+ ## Realizado por la alumna
+
+ | Nombre | Apellido | Email |
+ |--------|----------|---|
+ | Patricia | Atanasoff | pato.atanasoff@gmail.com
+
+
+
+
+
+
+
+
+
+
+

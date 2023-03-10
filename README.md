@@ -21,9 +21,9 @@
 1. Bootstrap Icons 
 1. Animate Style
 1. Swiper js
-1. Css puro
 1. React-router-dom
 1. Neumorphism
+1. Toastify
 ---
 ## Pasos para la creación del proyecto
 

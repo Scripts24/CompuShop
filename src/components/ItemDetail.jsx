@@ -12,6 +12,7 @@ const ItemDetail = ({ computers }) => {
                         <h4 className="card-titulo ">{computer.title}</h4>
                         <h5 className="card-category">{computer.category}</h5>
                         <h5 className="card-precio">${computer.price}</h5>
+                        <h5>Stock: {computer.stock}</h5>
                         <p className="card-descripcion">{computer.description}</p>
                         <ItemCount
                             stock={computer.stock}

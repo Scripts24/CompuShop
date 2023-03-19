@@ -22,17 +22,17 @@ const NavBar = () => {
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/category/${"Notebook"}`} className="link-nav">
+                    <Link to={`/category/${"notebook"}`} className="link-nav">
                         Notebooks
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/category/${"Gamer"}`} className="link-nav">
+                    <Link to={`/category/${"gamer"}`} className="link-nav">
                         Gamers
                     </Link>
                 </li>
                 <li>
-                    <Link to={`/category/${"Ofimática"}`} className="link-nav">
+                    <Link to={`/category/${"ofimatica"}`} className="link-nav">
                         Ofimáticas
                     </Link>
                 </li>

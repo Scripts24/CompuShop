@@ -4,15 +4,9 @@ const ItemList = ({ computers }) => {
     return (
         <>
             <div className="container-cards">
-                {computers?.map((computer) => (
+                {computers.map((comp) => (
                     <Item
-                        key={computer.id}
-                        id={computer.id}
-                        title={computer.title}
-                        price={computer.price}
-                        stock={computer.stock}
-                        category={computer.category}
-                        image={computer.image}
+                    {...comp} key={comp.id}
                     />
                 ))}
             </div>

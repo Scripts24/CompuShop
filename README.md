@@ -42,12 +42,7 @@
  #### Para más información visite [React](https://es.reactjs.org/) y [Vite](https://vitejs.dev/)
 
  ---
- ## Realizado por la alumna
-
- | Nombre | Apellido | Email |
- |--------|----------|---|
- | Patricia | Atanasoff | pato.atanasoff0815@gmail.com
-
+ 
 
 
 

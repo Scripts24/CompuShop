@@ -8,13 +8,13 @@ import "swiper/css/navigation";
 
 import { Autoplay, EffectCoverflow, Pagination, Navigation } from "swiper";
 
-import slide_image_1 from "../assets/img/1.jpg";
-import slide_image_2 from "../assets/img/2.jpg";
-import slide_image_3 from "../assets/img/3.jpg";
-import slide_image_4 from "../assets/img/4.jpg";
-import slide_image_5 from "../assets/img/5.jpg";
-import slide_image_6 from "../assets/img/6.jpg";
-import slide_image_7 from "../assets/img/7.jpg";
+import slide_image_1 from "../assets/img/swiper/1.jpg";
+import slide_image_2 from "../assets/img/swiper/2.jpg";
+import slide_image_3 from "../assets/img/swiper/3.jpg";
+import slide_image_4 from "../assets/img/swiper/4.jpg";
+import slide_image_5 from "../assets/img/swiper/5.jpg";
+import slide_image_6 from "../assets/img/swiper/6.jpg";
+import slide_image_7 from "../assets/img/swiper/7.jpg";
 
 const Welcome = () => {
   return (
@@ -71,10 +71,10 @@ const Welcome = () => {
 
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
-            <i class="bi bi-arrow-left"></i>
+            <i className="bi bi-arrow-left"></i>
           </div>
           <div className="swiper-button-next slider-arrow">
-            <i class="bi bi-arrow-right"></i>
+            <i className="bi bi-arrow-right"></i>
           </div>
           <div className="swiper-pagination"></div>
         </div>

@@ -1,38 +1,33 @@
 import React, { useState } from "react";
 
-function ItemCount({ stock }) {
-    const [cantidad, setCantidad] = useState(1);
+const ItemCount = ({ onAdd, initial, stock }) => {
 
-    const agregar = () =>
-        cantidad >= stock
-            ? Toastify({
-                text: "Límite del stock",
-                position: "center",
-                duration: 3000,
-                style: {
-                    background: "#CB544B",
-                    marginTop: "70px",
-                },
-            }).showToast()
-            : setCantidad(cantidad + 1);
-    const restar = () =>
-        cantidad <= 0 ? setCantidad(0) : setCantidad(cantidad - 1);
+    const [qty, setQty] = useState(initial);
+    
+
+    const addProduct = (num) => {
+        setQty(qty + num);
+    };
+
+
+
 
     return (
         <>
             <div className="container-contador">
                 <div className="contador">
-                    <button className="btn-contador" onClick={restar}>
-                        -
-                    </button>
-                    <h3>{cantidad}</h3>
-                    <button className="btn-contador" onClick={agregar}>
-                        +
-                    </button>
-                    <button className="btn-contador" onClick={() => setCantidad(1)}>
-                        Reset
-                    </button>
+                    <button className="btn-contador" onClick={() => addProduct(-1)} disabled={qty === initial} >-</button>
+                    <h3>{qty}</h3>
+                    <button className="btn-contador" onClick={() => addProduct(+1)} disabled={qty === stock}>+ </button>
+                    <button className="btn-contador" onClick={() => setQty(1)}>Reset</button>
                 </div>
+                <p>Stock restante: {stock - qty}</p>
+                <button className="btn-contador" 
+                onClick={() => {onAdd(qty);
+                    Toastify({text: `Se ha agregado ${id} al carrito ✔`,
+                    duration: 3000
+
+                    }).showToast();}} disabled={stock === 0 ? true : null}>Agregar</button>
             </div>
         </>
     );

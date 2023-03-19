@@ -1,36 +1,27 @@
-import React from "react";
+
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import Data from "../data.json";
 import ItemDetail from "./ItemDetail";
+import LoaderDetail from "./LoaderDetail"
+import { doc, getDoc, getFirestore } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-    const { id } = useParams();
-
-    const [computers, setComputer] = useState([]);
+    const [computer, setComputer] = useState([]);
+    const [loading, setLoading] = useState(true)
+    const {id} = useParams();
 
     useEffect(() => {
-        const getProducts = new Promise((resolve, reject) => {
-            if (Data.length === 0) {
-                reject(new Error("No hay productos para mostrar"));
-            }
-            resolve(Data);
-        });
-
-        getProducts.then((res) => setComputer(res));
-        getProducts.then((res) => console.log(res));
-
-        getProducts.catch((error) => {
-            console.log("La llamada falló", error);
-        })
-
-    }, []);
+        const db = getFirestore()
+        const queryDb = doc(db, 'computadoras', id )
+        getDoc(queryDb)
+        .then(resp => setComputer( { id: resp.id, ...resp.data() }))
+        .finally(() => setLoading(false))
+    }, [id])
 
 
-    const computerFilter = computers.filter((computer) => computer.id == id);
     return (
         <>
-            {id ? <ItemDetail computers={computerFilter} /> : <ItemDetail computers={computers} />}
+            {loading ?  <LoaderDetail />  :  <ItemDetail computer={computer}/> }
         </>
     );
 };

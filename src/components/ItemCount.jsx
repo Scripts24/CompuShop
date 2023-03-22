@@ -1,33 +1,35 @@
-import React, { useState } from "react";
+import {  useState} from "react"
 
-const ItemCount = ({ onAdd, initial, stock }) => {
+const ItemCount = ({ onAdd, max, initial, stock }) => {
 
-    const [qty, setQty] = useState(initial);
+    const [value, setValue] = useState(initial)
     
+    const add = () => {
+        if (value < max) {
+            setValue(value + 1);
+        } 
+    }
 
-    const addProduct = (num) => {
-        setQty(qty + num);
-    };
-
-
-
+    const subtract = () => {
+        if (value > initial)  {
+            setValue(value - 1)
+        }
+    }
 
     return (
         <>
-            <div className="container-contador">
-                <div className="contador">
-                    <button className="btn-contador" onClick={() => addProduct(-1)} disabled={qty === initial} >-</button>
-                    <h3>{qty}</h3>
-                    <button className="btn-contador" onClick={() => addProduct(+1)} disabled={qty === stock}>+ </button>
-                    <button className="btn-contador" onClick={() => setQty(1)}>Reset</button>
-                </div>
-                <p>Stock restante: {stock - qty}</p>
-                <button className="btn-contador" 
-                onClick={() => {onAdd(qty);
-                    Toastify({text: `Se ha agregado ${id} al carrito ✔`,
-                    duration: 3000
-
-                    }).showToast();}} disabled={stock === 0 ? true : null}>Agregar</button>
+            <div >
+                
+                <span>Stock disponible: {stock - value}</span>
+                    <div className="container-contador">
+                        <div className="contador" >
+                            <button className="btn-contador" onClick={subtract} >-</button>
+                            <p>{value}</p>
+                            <button className="btn-contador" onClick={add} >+</button>
+                            <button className="btn-contador" onClick={() => setValue(1)}>Reset</button>
+                        </div>
+                            <button className="btn-contador"onClick={()=> onAdd(value)} >Añadir producto </button>
+                    </div>
             </div>
         </>
     );

@@ -109,11 +109,12 @@ h6 {
 
 
 .carrito {
-  padding-right: 0.7rem;
+  padding-right: 0.9rem;
   font-size    : 1.2rem;
   font-weight  : 500;
   cursor       : pointer;
   color        : #b2936d;
+  background-color: #001D26;
 }
 
 /*-- Welcome Slider 3D --*/
@@ -358,8 +359,18 @@ h6 {
 /*-- Cart --*/
 
 .cart {
-  height: 100vh;
+  min-height: 100vh;
 }
+
+.check {
+  min-height: 100vh;
+}
+
+.check img {
+  width     : 100%;
+  min-height: 100vh;
+}
+
 
 
 /*-- Footer --*/

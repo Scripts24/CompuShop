@@ -8,6 +8,7 @@ import Cart from "./components/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer";
 import "./Style.css";
+import Checkout from "./components/Checkout";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           />
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
+          <Route exact path="/checkout" element={<Checkout />} />
         </Routes>
         <Footer/>
       </BrowserRouter>

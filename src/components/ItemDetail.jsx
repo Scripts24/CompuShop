@@ -26,7 +26,6 @@ const ItemDetail = ({ computer }) => {
                 duration: 3000,
                 style: {
                     background: "#548C1C",
-                    marginBottom: "70px",
                 },
             }).showToast();
 

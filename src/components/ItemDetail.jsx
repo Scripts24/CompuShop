@@ -4,15 +4,13 @@ import { NavLink } from "react-router-dom";
 import { useState, useContext } from "react";
 import { CartContext } from "../context/CartContext";
 
-
 const ItemDetail = ({ computer }) => {
 
     const cartContext = useContext(CartContext);
     const [goToCart, setGoToCart] = useState(false)
 
-    const { addToCart } = cartContext;
+    const {addToCart} = cartContext;
 
-    // Agregar al carrito
     const onAdd = (quantity) => {
         setGoToCart(true)
         addToCart({ ...computer, quantity: quantity })

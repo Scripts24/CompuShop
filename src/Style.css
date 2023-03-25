@@ -314,7 +314,7 @@ h6 {
 }
 
 .card-details .card-titulo {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .card-details .card-category {
@@ -361,15 +361,87 @@ h6 {
   min-height: 100vh;
 }
 
+/*-- Checkout --*/
+
 .check {
   min-height: 100vh;
 }
 
-.check img {
-  width     : 100%;
-  min-height: 100vh;
+.title-order {
+  margin-top: 60px;
+  font-size : 35px;
+  text-align: center;
+  color     : #001D26;
 }
 
+.contenedor-form {
+  padding-top   : 50px;
+  padding-bottom: 50px;
+}
+
+.contact-form {
+  margin-left : auto;
+  margin-right: auto;
+  width       : 80%;
+}
+
+.input {
+  font-size : 25px;
+  padding   : 10px;
+  margin    : 1rem auto;
+  display   : block;
+  width     : 100%;
+  border    : none;
+  box-shadow: 0px 3px 0px 0px #001D26;
+  padding   : .5rem;
+  transition: all 200ms ease-in-out;
+  opacity   : .8;
+}
+
+.input-box {
+  display       : flex;
+  flex-direction: column;
+}
+
+.input-label {
+  font-size    : 1rem;
+  font-weight  : bold;
+  color        : #858585;
+  margin-bottom: 10px;
+  margin-bottom: 4px;
+  margin-left  : 1px;
+}
+
+.input-helper {
+  color      : #a51e1e;
+  font-size  : 1rem;
+  margin-top : 4px;
+  margin-bottom: 6px;
+  margin-left: 1px;
+  visibility : hidden;
+  transform  : translateY(-.5rem);
+  transition : all 100ms linear;
+  z-index    : -1;
+}
+
+.input::after {
+  content : attr(placeholder);
+  position: absolute;
+  color   : #161616;
+  top     : 0;
+  left    : 0;
+}
+
+.input:focus {
+  border    : none;
+  box-shadow: 0px 3px 0px 0px #72E985;
+  outline   : none;
+}
+
+.input:focus+.input-helper {
+  visibility: visible;
+  transform : translateY(0rem);
+}
 
 
 /*-- Footer --*/
@@ -384,7 +456,7 @@ h6 {
 }
 
 .wrapper {
-  display   : flex;
+  display: flex;
 }
 
 .wrapper .icon {
@@ -443,7 +515,7 @@ h6 {
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper a{
+.wrapper a {
   color: #001D26;
 }
 
@@ -472,7 +544,7 @@ h6 {
   font-family: 'Roboto', sans-serif;
   color      : #b2936d;
   text-align : center;
-  margin    : 10px 0 10px 0;
+  margin     : 10px 0 10px 0;
 }
 
 .developed {

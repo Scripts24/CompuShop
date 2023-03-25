@@ -1,8 +1,10 @@
 import {  useState} from "react"
 
-const ItemCount = ({ onAdd, max, initial, stock }) => {
+const ItemCount = ({onAdd, max, initial, stock  }) => {
 
-    const [value, setValue] = useState(initial)
+   
+
+     const [value, setValue] = useState(initial)
     
     const add = () => {
         if (value < max) {
@@ -23,12 +25,12 @@ const ItemCount = ({ onAdd, max, initial, stock }) => {
                 <span>Stock disponible: {stock - value}</span>
                     <div className="container-contador">
                         <div className="contador" >
-                            <button className="btn-contador" onClick={subtract} >-</button>
+                            <button className="btn-contador" onClick={subtract}>-</button>
                             <p>{value}</p>
-                            <button className="btn-contador" onClick={add} >+</button>
+                            <button className="btn-contador" onClick={add}>+</button>
                             <button className="btn-contador" onClick={() => setValue(1)}>Reset</button>
                         </div>
-                            <button className="btn-contador"onClick={()=> onAdd(value)} >Añadir producto </button>
+                            <button className="btn-contador"  onClick={()=> onAdd(value) } >Añadir producto </button>
                     </div>
             </div>
         </>

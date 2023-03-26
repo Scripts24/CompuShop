@@ -30,7 +30,7 @@ const ItemCount = ({onAdd, max, initial, stock  }) => {
                             <button className="btn-contador" onClick={add}>+</button>
                             <button className="btn-contador" onClick={() => setValue(1)}>Reset</button>
                         </div>
-                            <button className="btn-contador"  onClick={()=> onAdd(value) } >Añadir producto </button>
+                            <button className="btn-contador"  onClick={()=> onAdd(value) }>Añadir producto </button>
                     </div>
             </div>
         </>

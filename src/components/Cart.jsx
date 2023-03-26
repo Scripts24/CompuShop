@@ -60,7 +60,7 @@ const Cart = () => {
                 <h4><b>${totalBuy()}</b></h4>
                 <div>
                     <button onClick={emptyCart}>Vaciar Carrito</button>
-                    <Link to="/Checkout">
+                    <Link to={"/checkout"}>
                         <button>Procesar Compra</button>
                     </Link>
                 </div>

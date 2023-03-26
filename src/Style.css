@@ -361,6 +361,100 @@ h6 {
   min-height: 100vh;
 }
 
+.cart-header {
+  display        : flex;
+  justify-content: space-around;
+}
+
+.cart-header h3 {
+  margin: 20px;
+}
+
+.cart-detalles {
+  display        : flex;
+  justify-content: space-around;
+  align-items    : center;
+  border         : 2px solid #001D26;
+  margin         : 10px;
+}
+
+.cart-detalles img {
+  width: 100px;
+}
+
+.cart-detalles i {
+  color    : #a51e1e;
+  font-size: 30px;
+}
+
+.cart-total {
+  text-align: center;
+  margin    : 10px;
+  padding   : 20px;
+  border    : 2px solid #001D26;
+}
+
+.cart-empty {
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+}
+
+.cart-empty h2 {
+  margin-top   : 70px;
+  margin-bottom: 50px;
+  font-size    : 50px;
+  color        : #a51e1e;
+}
+
+.cart-empty h3 {
+  font-size    : 50px;
+  margin-bottom: 50px;
+  color        : #1d8333a4;
+}
+
+.cart-empty .buttons {
+  text-decoration: none;
+}
+
+.cart-empty .buttons button {
+  font-size: 30px;
+  color    : #001D26;
+}
+
+.cart-empty .flecha {
+  font-size: 50px;
+  color    : #001D26;
+}
+
+.buttons {
+  display        : flex;
+  justify-content: space-around;
+  margin-top     : 25px;
+}
+
+.buttons button {
+  color        : #090909;
+  padding      : 0.7em 1.7em;
+  font-size    : 18px;
+  border-radius: 0.5em;
+  background   : #e8e8e8;
+  border       : 1px solid #e8e8e8;
+  transition   : all .3s;
+  box-shadow   : 6px 6px 12px #c5c5c5,
+    -6px -6px 12px #ffffff;
+}
+
+.buttons button:hover {
+  border: 1px solid white;
+}
+
+.buttons button:active {
+  box-shadow: 4px 4px 12px #c5c5c5,
+    -4px -4px 12px #ffffff;
+}
+
 /*-- Checkout --*/
 
 .check {
@@ -413,15 +507,15 @@ h6 {
 }
 
 .input-helper {
-  color      : #a51e1e;
-  font-size  : 1rem;
-  margin-top : 4px;
+  color        : #a51e1e;
+  font-size    : 1rem;
+  margin-top   : 4px;
   margin-bottom: 6px;
-  margin-left: 1px;
-  visibility : hidden;
-  transform  : translateY(-.5rem);
-  transition : all 100ms linear;
-  z-index    : -1;
+  margin-left  : 1px;
+  visibility   : hidden;
+  transform    : translateY(-.5rem);
+  transition   : all 100ms linear;
+  z-index      : -1;
 }
 
 .input::after {

@@ -58,7 +58,7 @@ const ItemDetail = ({ computer }) => {
                             ?
                             <ItemCount id={computer.id} initial={1} max={computer.stock} stock={computer.stock} onAdd={onAdd} />
                             :
-                            <div>
+                            <div  className="buttons">
                                 <NavLink to="/cart"><button >Ir al Carrito</button></NavLink>
 
                                 <NavLink to='/catalogue'><button> Volver  </button> </NavLink>

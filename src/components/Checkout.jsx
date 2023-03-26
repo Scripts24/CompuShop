@@ -135,7 +135,7 @@ const Checkout = () => {
 								</div>
 								<div className="input-box">
 									<label className="input-label">Confirmar Email</label>
-									<input type="text" className="input" name="emailConfirm" placeholder="juanperez@ejemplo.com" defaultValue={formData.emailConfirm} required />
+									<input type="text" className="input" name="emailConfirm" defaultValue={formData.emailConfirm} required />
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>

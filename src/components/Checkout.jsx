@@ -93,18 +93,25 @@ const Checkout = () => {
 			{creatingOrder
 				?
 				<>
-					<h3 >Procesando orden de compra...</h3>
+					<h3>Procesando orden de compra...</h3>
 					<Loader />
 				</>
 				:
 				orderId
 					?
-					<div className="container">
-						<div >
-							<h2 >¡Gracias por su compra!</h2>
-							<h3>El ID de tu compra es {orderId}</h3><br />
-							<Link to={"/"}>
-								<strong>VRegresar</strong>
+					<div className="check">
+						<div className="id-order">
+							<h2 className="gracias">¡Gracias por su compra! <i className="bi bi-emoji-smile-fill"></i></h2>
+							<div className="cardBox">
+								<div className="card-check">
+									<div className="h4"><h2>Se ha generado una orden con el ID: {orderId}</h2></div>
+									<div className="content-check">
+										<p>Por cuallquier consulta, tiene a su disposición los medios de contacto al pie de página</p>
+									</div>
+								</div>
+							</div>
+							<Link to={"/"} className="buttons">
+								<button>Regresar</button>
 							</Link>
 						</div>
 					</div>
@@ -123,13 +130,13 @@ const Checkout = () => {
 								</div>
 								<div className="input-box">
 									<label className="input-label">Teléfono</label>
-									<input type="number" className="input" name="phone" placeholder="Ej. 2215687733" defaultValue={formData.phone} pattern ="/^\d{7,14}$/" required />
+									<input type="number" className="input" name="phone" placeholder="Ej. 2215687733" defaultValue={formData.phone} pattern="/^\d{7,14}$/" required />
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>
 								<div className="input-box">
 									<label className="input-label"> Email</label>
-									<input type="text" className="input" name="email" placeholder="Ej. juanperez@ejemplo.com" defaultValue={formData.email}  pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required />
+									<input type="text" className="input" name="email" placeholder="Ej. juanperez@ejemplo.com" defaultValue={formData.email} pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required />
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>
@@ -141,6 +148,9 @@ const Checkout = () => {
 								</div>
 								<div><input type="submit" className="input" value="Procesar orden de compra" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length == 0} /></div>
 								<div><input type="reset" className="input" value="Reset" /></div>
+								<Link to={"/"} className="buttons" >
+									<button>Regresar</button>
+								</Link>
 							</form>
 						</div>
 					</div>

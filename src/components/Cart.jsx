@@ -18,8 +18,7 @@ const Cart = () => {
                         <h3>¿Deseas agregar algún producto? <i className="bi bi-emoji-smile-upside-down-fill"></i></h3>
                         <i className="bi bi-arrow-90deg-down flecha"></i>
                         <Link to="/catalogue" className='buttons'>
-                        
-                         <button> Ver catálogo</button>  
+                        <button> Ver catálogo</button>  
                         </Link>
                     </div>
                 </div>

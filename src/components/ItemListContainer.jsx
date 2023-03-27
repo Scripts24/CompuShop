@@ -23,8 +23,6 @@ const ItemListContainer = ({ greeting }) => {
 				.finally(() => setLoading(false))
 		}
 	}, [category])
-	
-
 
 	return (
 		<div>

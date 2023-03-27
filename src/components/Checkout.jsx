@@ -1,4 +1,3 @@
-import { useForm } from "react-hook-form";
 import { useState, useContext } from "react";
 import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc } from "firebase/firestore";
 import { Link } from 'react-router-dom'
@@ -6,7 +5,6 @@ import { CartContext } from "../context/CartContext";
 import Loader from "./Loader"
 
 const Checkout = () => {
-
 
 	const [orderId, setOrderId] = useState('');
 	const [creatingOrder, setCreatingOrder] = useState(false)
@@ -16,14 +14,12 @@ const Checkout = () => {
 	const cartContext = useContext(CartContext);
 	const { cartList, totalBuy, emptyCart } = cartContext;
 
-
 	const handleChange = (e) => {
 		setFormData({
 			...formData,
 			[e.target.name]: e.target.value
 		})
 	}
-
 
 	const createOrder = (e) => {
 		e.preventDefault();
@@ -42,7 +38,6 @@ const Checkout = () => {
 			const totalPrice = cartItem.price * cartItem.quantity
 			return { id, title, price, quantity, totalPrice }
 		})
-
 
 		const db = getFirestore()
 		const orderCollection = collection(db, 'orders')
@@ -64,14 +59,13 @@ const Checkout = () => {
 						duration: 3000,
 						style: {
 							background: "#548C1C",
-							marginTop: "70px",
+							marginTop: "60px",
 							padding: "20px",
 							fontSize: "20px"
 						},
 					}).showToast()
 				}
 			})
-
 
 		function updateStock() {
 			const batch = writeBatch(db)
@@ -104,9 +98,9 @@ const Checkout = () => {
 							<h2 className="gracias">¡Gracias por su compra! <i className="bi bi-emoji-smile-fill"></i></h2>
 							<div className="cardBox">
 								<div className="card-check">
-									<div className="h4"><h2>Se ha generado una orden con el ID: {orderId}</h2></div>
+									<div className="h4"><h3>Se ha generado una orden con el ID: {orderId}</h3></div>
 									<div className="content-check">
-										<p>Por cuallquier consulta, tiene a su disposición los medios de contacto al pie de página</p>
+										<p>Por cualquier consulta, tiene a su disposición los medios de contacto al pie de página</p>
 									</div>
 								</div>
 							</div>

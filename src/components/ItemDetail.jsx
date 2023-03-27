@@ -9,7 +9,7 @@ const ItemDetail = ({ computer }) => {
     const cartContext = useContext(CartContext);
     const [goToCart, setGoToCart] = useState(false)
 
-    const {addToCart} = cartContext;
+    const { addToCart } = cartContext;
 
     const onAdd = (quantity) => {
         setGoToCart(true)
@@ -24,9 +24,11 @@ const ItemDetail = ({ computer }) => {
                 duration: 3000,
                 style: {
                     background: "#548C1C",
+                    marginBottom: "50px",
+                    padding: "20px",
+                    fontSize: "20px"
                 },
             }).showToast();
-
         }
         else if (quantity === 1) {
             setGoToCart(quantity)
@@ -37,31 +39,34 @@ const ItemDetail = ({ computer }) => {
                 duration: 3000,
                 style: {
                     background: "#548C1C",
-                    marginBottom: "70px",
+                    marginBottom: "50px",
+                    padding: "20px",
+                    fontSize: "20px"
                 },
             }).showToast();
         }
     }
-    
+
     return (
-        <div >
+        <div>
+
             <div key={computer.id} className="container-details">
-                <img src={computer.image} alt={computer.title} className="img-details" />
                 <div className="card-details">
+                    <img src={computer.image} alt={computer.title} className="img-details" />
                     <h4 className="card-titulo ">{computer.title}</h4>
-                    <h5 className="card-category">{computer.category}</h5>
+                    <h5 className="card-category"> Categoría: {computer.category}</h5>
                     <h5 className="card-precio">${computer.price}</h5>
-                    <h5>Stock: {computer.stock}</h5>
-                    <p className="card-descripcion">{computer.description}</p>
-                    <div className="cart">
+                    <h4 className="card-stock">Stock: {computer.stock}</h4>
+                    <p className="card-description">{computer.description}</p>
+                    <div >
                         {!goToCart
                             ?
                             <ItemCount id={computer.id} initial={1} max={computer.stock} stock={computer.stock} onAdd={onAdd} />
                             :
-                            <div  className="buttons">
+                            <div className="agregado buttons">
                                 <NavLink to="/cart"><button >Ir al Carrito</button></NavLink>
 
-                                <NavLink to='/catalogue'><button> Volver  </button> </NavLink>
+                                <NavLink to='/catalogue'><button> Volver </button> </NavLink>
                             </div>
                         }
                     </div>

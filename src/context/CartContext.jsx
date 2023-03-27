@@ -14,7 +14,7 @@ const CartProvider = ({ children }) => {
         localStorage.setItem("carrito", JSON.stringify(cartList));
     }, [cartList]);
 
-    
+
     function addToCart(item) {
         const index = cartList.findIndex((i) => i.id === item.id);
 
@@ -43,7 +43,7 @@ const CartProvider = ({ children }) => {
         return cartList.reduce((prev, prod) => prev + prod.quantity, 0);
     };
 
-   
+
     const totalBuy = () => {
         return cartList.reduce(
             (prev, prod) => prev + prod.quantity * prod.price,

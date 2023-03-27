@@ -6,7 +6,7 @@ const ItemList = ({ computers }) => {
             <div className="container-cards">
                 {computers.map((comp) => (
                     <Item
-                    {...comp} key={comp.id}
+                        {...comp} key={comp.id}
                     />
                 ))}
             </div>

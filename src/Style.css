@@ -294,15 +294,14 @@ h6 {
 }
 
 .img-details {
-  width        : 500px;
-  height       : 400px;
-  border       : 3px solid #001D26;
+  width        : 300px;
+  height       : 200px;
   border-radius: 25px;
 }
 
 .card-details {
   width          : 500px;
-  height         : 400px;
+  height         : 700px;
   display        : flex;
   flex-direction : column;
   justify-content: space-between;
@@ -314,15 +313,22 @@ h6 {
 }
 
 .card-details .card-titulo {
-  font-size: 40px;
+  font-size    : 30px;
+  margin-bottom: 10px;
 }
 
 .card-details .card-category {
-  font-size: 25px;
+  font-size    : 25px;
+  margin-bottom: 10px;
 }
 
 .card-details .card-precio {
-  font-size: 22px;
+  font-size    : 22px;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  margin-top: 10px;
 }
 
 /*-- ItemCount --*/
@@ -336,7 +342,7 @@ h6 {
   display                : flex;
   justify-content        : center;
   align-items            : center;
-  margin-top             : 20px;
+  margin-top             : 10px;
   background             : rgba(255, 255, 255, 0.25);
   box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter        : blur(4px);
@@ -347,7 +353,7 @@ h6 {
 
 .btn-contador {
   padding    : 10px;
-  margin     : 20px;
+  margin     : 10px;
   font-size  : 20px;
   font-weight: 700;
   cursor     : pointer;
@@ -366,7 +372,7 @@ h6 {
   justify-content: space-around;
 }
 
-.cart-header h3 {
+.cart-header h4 {
   margin: 20px;
 }
 
@@ -409,7 +415,7 @@ h6 {
 }
 
 .cart-empty h3 {
-  font-size    : 50px;
+  font-size    : 40px;
   margin-bottom: 50px;
   color        : #1d8333a4;
 }
@@ -431,7 +437,8 @@ h6 {
 .buttons {
   display        : flex;
   justify-content: space-around;
-  margin-top     : 25px;
+  margin-top     : 20px;
+  margin-bottom  : 10px;
 }
 
 .buttons button {
@@ -537,88 +544,88 @@ h6 {
   transform : translateY(0rem);
 }
 
-form .buttons{
+form .buttons {
   text-decoration: none;
 }
 
 /*-- Orden de compra --*/
 
-.id-order{
-  display: flex;
+.id-order {
+  display        : flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  align-items    : center;
+  flex-direction : column;
 }
 
-.id-order .gracias{
-  font-size: 50px;
-  color: #0d4c5f;
-  margin-top: 50px;
+.id-order .gracias {
+  font-size    : 50px;
+  color        : #0d4c5f;
+  margin-top   : 50px;
   margin-bottom: 50px;
 }
 
-.id-order .buttons{
+.id-order .buttons {
   text-decoration: none;
 }
 
 .cardBox {
-  width: 350px;
-  height: 250px;
+  width        : 350px;
+  height       : 250px;
   margin-bottom: 50px;
-  position: relative;
-  display: grid;
-  place-items: center;
-  overflow: hidden;
+  position     : relative;
+  display      : grid;
+  place-items  : center;
+  overflow     : hidden;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
+  box-shadow   : rgba(0, 0, 0, 0.4) 0px 2px 10px 0px,
     rgba(0, 0, 0, 0.5) 0px 2px 25px 0px;
 }
 
 .card-check {
-  position: absolute;
-  width: 95%;
-  height: 95%;
-  background: #000814;
-  border-radius: 20px;
-  z-index: 5;
-  display: flex;
+  position       : absolute;
+  width          : 95%;
+  height         : 95%;
+  background     : #000814;
+  border-radius  : 20px;
+  z-index        : 5;
+  display        : flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  color: #40E0D0;
-  overflow: hidden;
-  padding: 20px;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
+  align-items    : center;
+  flex-direction : column;
+  text-align     : center;
+  color          : #40E0D0;
+  overflow       : hidden;
+  padding        : 20px;
+  cursor         : pointer;
+  box-shadow     : rgba(0, 0, 0, 0.4) 0px 30px 60px -12px inset,
     rgba(0, 0, 0, 0.5) 0px 18px 36px -18px inset;
 }
 
 .card-check .h4 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 20px;
-  font-weight: 800;
+  position      : absolute;
+  top           : 50%;
+  left          : 50%;
+  transform     : translate(-50%, -50%);
+  font-size     : 20px;
+  font-weight   : 800;
   pointer-events: none;
-  opacity: .5;
+  opacity       : .5;
 }
 
 .card-check .content-check p {
-  font-size: 24px;
+  font-size  : 24px;
   line-height: 1.4em;
 }
 
 .card-check .content-check {
-  transform: translateY(100%);
-  opacity: 0;
+  transform : translateY(100%);
+  opacity   : 0;
   transition: 0.3s ease-in-out;
 }
 
 .card-check:hover .content-check {
   transform: translateY(0);
-  opacity: 1;
+  opacity  : 1;
 }
 
 .card-check:hover .h4 {
@@ -626,15 +633,15 @@ form .buttons{
 }
 
 .cardBox::before {
-  content: "";
-  position: absolute;
-  width: 40%;
-  height: 150%;
-  background: #40E0D0;
-  background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
-  background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  content         : "";
+  position        : absolute;
+  width           : 40%;
+  height          : 150%;
+  background      : #40E0D0;
+  background      : -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
+  background      : linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);
   transform-origin: center;
-  animation: glowing_401 5s linear infinite;
+  animation       : glowing_401 5s linear infinite;
 }
 
 @keyframes glowing_401 {
@@ -965,6 +972,57 @@ form .buttons{
   .nav-toggle.open>span:nth-child(3) {
     transform: rotate(-45deg) translate(-5px, 1px);
   }
+
+  .cart-empty h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .id-order .gracias {
+    font-size: 35px;
+  }
+
+  .cart-empty h2 {
+    font-size: 40px;
+  }
+
+  .cart-empty h3 {
+    font-size: 25px;
+  }
+
+  .cart-empty .buttons button {
+    font-size: 25px;
+
+  }
+
+  .cart-empty .flecha {
+    font-size: 35px;
+  }
+
+  .cart-header {
+    font-size: 14px;
+  }
+
+  .options button {
+    font-size: 12px;
+  }
+
+  .cart-detalles h5 {
+    font-size: 14px;
+  }
+
+  .cart-detalles img {
+    width: 70px;
+  }
+
+  .cart-detalles i {
+    font-size: 15px;
+  }
+
+  .cart-total {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 500px) {
@@ -981,6 +1039,15 @@ form .buttons{
     width : 15rem !important;
     height: 10rem !important;
   }
+
+  .cart-empty .buttons button {
+    font-size: 20px;
+  }
+
+  .cart-empty .flecha {
+    font-size: 30px;
+  }
+
 }
 
 @media (max-width: 450px) {
@@ -998,6 +1065,27 @@ form .buttons{
     width : 300px;
     height: 250px;
   }
+
+  .id-order .gracias {
+    font-size: 30px;
+  }
+
+  .card-details {
+    height: 800px;
+  }
+
+  .cart-empty h2 {
+    font-size: 30px;
+  }
+
+  .cart-empty h3 {
+    font-size: 20px;
+  }
+
+  .cart-header {
+    font-size: 10px;
+  }
+
 }
 
 @media screen and (max-width:365px) {
@@ -1017,5 +1105,9 @@ form .buttons{
 
   .carrito {
     margin-left: 11rem;
+  }
+
+  .id-order .gracias {
+    font-size: 25px;
   }
 }

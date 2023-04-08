@@ -4,15 +4,18 @@ import { Link } from 'react-router-dom'
 import { CartContext } from "../context/CartContext";
 import Loader from "./Loader"
 
+
 const Checkout = () => {
 
 	const [orderId, setOrderId] = useState('');
 	const [creatingOrder, setCreatingOrder] = useState(false)
 	const [formData, setFormData] = useState({
-		name: "", email: "", emailConfirm: "", phone: ""
+		name: "", userEmail: "", emailConfirm: "", phone: ""
 	})
 	const cartContext = useContext(CartContext);
 	const { cartList, totalBuy, emptyCart } = cartContext;
+	
+
 
 	const handleChange = (e) => {
 		setFormData({
@@ -20,7 +23,7 @@ const Checkout = () => {
 			[e.target.name]: e.target.value
 		})
 	}
-
+	
 	const createOrder = (e) => {
 		e.preventDefault();
 		setCreatingOrder(true)
@@ -130,7 +133,7 @@ const Checkout = () => {
 								</div>
 								<div className="input-box">
 									<label className="input-label"> Email</label>
-									<input type="text" className="input" name="email" placeholder="Ej. juanperez@ejemplo.com" defaultValue={formData.email} pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required />
+									<input type="text" className="input" name="email" placeholder="Ej. youremail@gmail.com" defaultValue={formData.email} pattern="^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$" required />
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>
@@ -140,7 +143,7 @@ const Checkout = () => {
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>
-								<div><input type="submit" className="input" value="Procesar orden de compra" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm || cartList.length == 0} /></div>
+								<div><input type="submit" className="input" value="Procesar orden de compra" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm } /></div>
 								<div><input type="reset" className="input" value="Reset" /></div>
 								<Link to={"/"} className="buttons" >
 									<button>Regresar</button>

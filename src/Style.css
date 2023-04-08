@@ -106,14 +106,22 @@ h6 {
   display: none;
 }
 
+.container-carrito-user {
+  display: flex;
+  gap    : 5px;
+}
 
-.carrito {
-  padding-right   : 0.9rem;
-  font-size       : 1.2rem;
-  font-weight     : 500;
-  cursor          : pointer;
-  color           : #b2936d;
-  background-color: #001D26;
+.container-carrito-user .user {
+  text-decoration: none;
+  font-family    : 'Roboto', sans-serif;
+  font-size      : 1rem;
+  font-weight    : 700;
+  margin-right   : 10px;
+  color          : #b2936d;
+}
+
+.logout {
+  cursor: pointer;
 }
 
 /*-- Welcome Slider 3D --*/
@@ -209,6 +217,7 @@ h6 {
 }
 
 /*-- Item --*/
+
 .container-cards {
   display        : flex;
   flex-wrap      : wrap;
@@ -765,6 +774,178 @@ form .buttons {
   border       : solid 2px #b2936d;
 }
 
+/* Login and register*/
+
+.container-login,
+.container-register {
+  width          : 100%;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  min-height     : 100vh;
+}
+
+.form-container {
+  max-width       : 600px;
+  width           : 90vw;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  flex-direction  : column;
+  background-color: #fff;
+  border-radius   : 10px;
+  padding         : 2rem 1.5rem 1.8rem 1.5rem;
+  border          : 4px solid #b2936d;
+  margin-top      : 70px;
+}
+
+.form-container h2 {
+  font-size: 32px;
+}
+
+.form-container .inputs {
+  display       : flex;
+  flex-direction: column;
+  margin        : 1.2rem 0 1rem 0;
+}
+
+.inputs label {
+  padding-bottom: 8px;
+  font-size     : 18px;
+}
+
+.form-container input {
+  all          : unset;
+  max-width    : 450px;
+  width        : 60vw;
+  border-radius: 7px;
+  height       : 50px;
+  font-size    : 17px;
+  border-bottom: 3px solid #b2936d;
+}
+
+.form-container input:focus {
+  outline  : none;
+  font-size: 17px;
+}
+
+.inputs input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  box-shadow: 0 0 0px 1000px #fff inset;
+}
+
+.container-send {
+  max-width      : 450px;
+  width          : 60vw;
+  display        : flex;
+  justify-content: space-between;
+  margin-top     : 14px;
+  flex-wrap      : wrap;
+}
+
+.btn-send {
+  all             : unset;
+  width           : 120px;
+  height          : 44px;
+  text-align      : center;
+  font-size       : 19px;
+  border-radius   : 5px;
+  padding         : 0 5px;
+  background-color: #001D26;
+  color           : #fff;
+  cursor          : pointer;
+}
+
+.btn-send:hover {
+  background-color: #001d26e3;
+}
+
+div .go-login-register {
+  width          : 80vw;
+  max-width      : 500px;
+  margin-top     : 20px;
+  font-size      : 19px;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  flex-direction : column;
+  gap            : 10px;
+}
+
+.go-login-register a {
+  text-decoration: none;
+  font-size      : 19px;
+}
+
+.btn-google {
+  all             : unset;
+  height          : 40px;
+  width           : 200px;
+  background-color: #b2936d;
+  border-radius   : 10px;
+  text-align      : center;
+  padding         : 5px;
+  font-size       : 17px;
+  margin          : 30px 0;
+  cursor          : pointer;
+}
+
+.btn-google:hover {
+  background-color: #b2936dc9;
+}
+
+.google-icon {
+  font-size    : 22px;
+  margin-bottom: 2px;
+  margin-right : 10px;
+}
+
+.forgot-password {
+  font-size      : 17px;
+  color          : #22690de3;
+  text-decoration: none;
+  margin-top     : 7px;
+}
+
+/*-- Alert --*/
+
+.container-alert {
+  background-color  : #CB544B;
+  border            : 1px solid rgb(230, 30, 30);
+  color             : whitesmoke;
+  padding           : 1.7rem;
+  position          : relative;
+  margin            : 1rem 0;
+  text-align        : center;
+}
+
+/*-- ScrollToTop --*/
+
+.scroll-top {
+  background-color: #001D26;
+  border-radius   : 20%;
+  border          : 2px solid #b2936d;
+  position       : fixed;
+  height         : 4rem;
+  width          : 3rem;
+  bottom         : 170px;
+  right          : 20px;
+  z-index        : 800;
+  cursor         : pointer;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  color          : rgb(225, 225, 225);
+  font-size      : 2em;
+}
+
+.scroll-top:hover {
+  background-color: rgb(57, 57, 57);
+}
+
+
 /*-- Loader --*/
 
 .spinner-container {
@@ -821,6 +1002,7 @@ form .buttons {
 }
 
 /*-- Loader Detail --*/
+
 .spinner-detail {
   width          : 100vw;
   height         : 100vh;
@@ -928,11 +1110,18 @@ form .buttons {
     width          : 100%;
     height         : -webkit-fill-available;
     transform      : translateX(-100%);
-    z-index        : 10;
   }
 
-  .nav-items li {
+  .link-nav {
     text-align: center;
+    width     : 100%;
+    display   : table;
+  }
+
+  .link-nav:hover {
+    color     : #09bef0;
+    transition: all 10s ease;
+    transform : scale(1.2);
   }
 
   .nav-items.open {
@@ -945,12 +1134,6 @@ form .buttons {
     margin        : 0.5rem;
   }
 
-  .carrito {
-    display    : block;
-    position   : absolute;
-    margin-left: 13rem;
-  }
-
   .nav-toggle span {
     width           : 30px;
     height          : 4px;
@@ -958,7 +1141,7 @@ form .buttons {
     margin-bottom   : 5px;
     border-radius   : 2px;
     transform-origin: 5px 0px;
-    transition      : all .3s ease-in-out;
+    transition      : all .3s linear;
   }
 
   .nav-toggle.open>span {
@@ -971,6 +1154,12 @@ form .buttons {
 
   .nav-toggle.open>span:nth-child(3) {
     transform: rotate(-45deg) translate(-5px, 1px);
+  }
+
+  .container-carrito-user {
+    display    : block;
+    position   : absolute;
+    margin-left: 13rem;
   }
 
   .cart-empty h3 {
@@ -1022,6 +1211,13 @@ form .buttons {
 
   .cart-total {
     font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 546px) {
+  .scroll-top {
+    bottom: 30px;
+    right : 15px;
   }
 }
 

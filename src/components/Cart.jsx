@@ -3,11 +3,10 @@ import { useContext } from 'react';
 import { CartContext } from "../context/CartContext";
 import { Link } from 'react-router-dom';
 
-
 const Cart = () => {
     const cartContext = useContext(CartContext);
-    const { cartList, totalBuy, removeItem, emptyCart } = cartContext;
-
+    const { cartList, totalBuy, removeItem, emptyCart, } = cartContext;
+   
     return (
         <>
             {cartList.length === 0

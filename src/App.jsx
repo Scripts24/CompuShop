@@ -7,33 +7,42 @@ import Welcome from "./components/Welcome";
 import Cart from "./components/Cart";
 import ItemDetailContainer from "./components/ItemDetailContainer";
 import Footer from "./components/Footer";
-import "./Style.css";
 import Checkout from "./components/Checkout";
+import { AuthProvider } from "./context/AuthContext";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import "./Style.css";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
-    <CartProvider>
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Welcome />} />
-          <Route
-            exact
-            path="/catalogue"
-            element={<ItemListContainer greeting={"TU TIENDA ONLINE"} />}
-          />
-          <Route
-            exact
-            path="/category/:category"
-            element={<ItemListContainer />}
-          />
-          <Route exact path="/item/:id" element={<ItemDetailContainer />} />
-          <Route exact path="/cart" element={<Cart />} />
-          <Route exact path="/checkout" element={<Checkout />} />
-        </Routes>
-        <Footer/>
-      </BrowserRouter>
-    </CartProvider>
+    <AuthProvider>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar />
+          <ScrollToTop/>
+          <Routes>
+            <Route exact path="/login" element={<Login />} />
+            <Route exact path="/register" element={<Register />} />
+            <Route exact path="/" element={<Welcome />} />
+            <Route
+              exact
+              path="/catalogue"
+              element={<ItemListContainer greeting={"TU TIENDA ONLINE"} />}
+            />
+            <Route
+              exact
+              path="/category/:category"
+              element={<ItemListContainer />}
+            />
+            <Route exact path="/item/:id" element={<ItemDetailContainer />} />
+            <Route exact path="/cart" element={<Cart />} />
+            <Route exact path="/checkout" element={<Checkout />} />
+          </Routes>
+          <Footer />
+        </BrowserRouter>
+      </CartProvider>
+    </AuthProvider>
   );
 };
 

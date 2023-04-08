@@ -1,12 +1,26 @@
-import { Link } from "react-router-dom";
-import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState, useContext } from "react";
 import logo from "../assets/img/logo.jpg";
 import CartWidget from "./CartWidget";
+import { useAuth } from "../context/AuthContext";
+import { CartContext } from "../context/CartContext";
 
 const NavBar = () => {
+    const navigate = useNavigate()
     const [isOpen, setIsOpen] = useState(false);
+    const cartContext = useContext(CartContext);
+    const { emptyCart } = cartContext;
+    const { user, logout } = useAuth();
+
+    const onClickLogOut = () => {
+        logout();
+        emptyCart();
+        navigate("/login");
+    };
+
     return (
         <div className="navbar">
+
             <div className="nav-logo">
                 <img src={logo}></img>
                 <h1>
@@ -45,8 +59,27 @@ const NavBar = () => {
                 <span></span>
                 <span></span>
             </div>
-            <CartWidget />
+
+            <div className="container-carrito-user">
+                {!user && (<Link to={`/login`} className="user">
+                    <h5 className="user"> Log In</h5> </Link>)}
+
+                {!user && (<Link to={`/register`} className="user" >
+                    <h5 className="user">Register</h5></Link>)}
+
+                {user && (
+                <>  
+                    <CartWidget /> 
+                    <i className="bi bi-file-person-fill user"></i>
+                        <span onClick={onClickLogOut} >
+                            <i className="bi bi-box-arrow-right user logout"></i>
+                        </span>
+                </>
+                )}
+            </div>
+
         </div>
+
     );
 };
 

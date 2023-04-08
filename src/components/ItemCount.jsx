@@ -1,9 +1,7 @@
 import { useState } from "react"
 import { NavLink } from "react-router-dom";
 
-const ItemCount = ({ onAdd, max, initial }) => {
-
-
+const ItemCount = ({onAdd, max, initial }) => {
 
     const [value, setValue] = useState(initial)
 
@@ -28,7 +26,7 @@ const ItemCount = ({ onAdd, max, initial }) => {
                     <button className="btn-contador" onClick={add}>+</button>
                     <button className="btn-contador" onClick={() => setValue(1)}>Reset</button>
                 </div>
-                <button className="btn-contador" onClick={() => onAdd(value)}>Añadir producto </button>
+                <button className="btn-contador" onClick={() => onAdd(value)} disabled={max === 0}>Añadir producto </button>
                 <NavLink to='/catalogue'><button className="btn-contador"> Volver al catálogo </button> </NavLink>
             </div>
         </>

@@ -10,7 +10,7 @@ const CartWidget = () => {
 
   return (
     cartCounter() > 0) ?
-    <Link to={"/cart"} className="carrito">
+    <Link to={"/cart"} className="user">
       <i className="bi bi-cart-check-fill "><span>{cartCounter()}</span></i>
     </Link> : "";
 

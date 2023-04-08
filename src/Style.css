@@ -1101,7 +1101,7 @@ div .go-login-register {
 @media screen and (max-width:790px) {
   .nav-items {
     position       : absolute;
-    top            : 4rem;
+    top            : 5rem;
     left           : 0;
     background     : #001D26;
     display        : flex;
@@ -1110,6 +1110,7 @@ div .go-login-register {
     width          : 100%;
     height         : -webkit-fill-available;
     transform      : translateX(-100%);
+    z-index: 1000;
   }
 
   .link-nav {

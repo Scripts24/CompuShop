@@ -60,8 +60,8 @@ const ItemDetail = ({ computer }) => {
                 style: {
                     background: "#BF0B3B",
                     marginTop: "70px",
-                    padding: "30px",
-                    fontSize: "30px"
+                    padding: "20px",
+                    fontSize: "20px"
                 },
             }).showToast();
         }

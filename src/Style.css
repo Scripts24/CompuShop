@@ -912,13 +912,13 @@ div .go-login-register {
 /*-- Alert --*/
 
 .container-alert {
-  background-color  : #CB544B;
-  border            : 1px solid rgb(230, 30, 30);
-  color             : whitesmoke;
-  padding           : 1.7rem;
-  position          : relative;
-  margin            : 1rem 0;
-  text-align        : center;
+  background-color: #CB544B;
+  border          : 1px solid rgb(230, 30, 30);
+  color           : whitesmoke;
+  padding         : 1.7rem;
+  position        : relative;
+  margin          : 1rem 0;
+  text-align      : center;
 }
 
 /*-- ScrollToTop --*/
@@ -927,18 +927,18 @@ div .go-login-register {
   background-color: #001D26;
   border-radius   : 20%;
   border          : 2px solid #b2936d;
-  position       : fixed;
-  height         : 4rem;
-  width          : 3rem;
-  bottom         : 170px;
-  right          : 20px;
-  z-index        : 800;
-  cursor         : pointer;
-  display        : flex;
-  justify-content: center;
-  align-items    : center;
-  color          : rgb(225, 225, 225);
-  font-size      : 2em;
+  position        : fixed;
+  height          : 4rem;
+  width           : 3rem;
+  bottom          : 170px;
+  right           : 20px;
+  z-index         : 800;
+  cursor          : pointer;
+  display         : flex;
+  justify-content : center;
+  align-items     : center;
+  color           : rgb(225, 225, 225);
+  font-size       : 2em;
 }
 
 .scroll-top:hover {
@@ -1082,6 +1082,87 @@ div .go-login-register {
   }
 }
 
+/*-- NotFound --*/
+
+.not-found {
+  position       : absolute;
+  top            : 0;
+  left           : 0;
+  display        : flex;
+  justify-content: center;
+  align-items    : center;
+  background     : url('../src/assets/img/bgNotFound.png'), #151729;
+  width          : 100%;
+  min-height     : 100%;
+  z-index        : 10;
+}
+
+.content-notfound {
+  max-width : 600px;
+  text-align: center;
+}
+
+.content-notfound>h2 {
+  font-size: 14rem;
+  color    : rgba(255, 255, 255, 0.526);
+}
+
+.content-notfound>h4 {
+  position        : relative;
+  font-size       : 1.5rem;
+  margin          : 0 10px 30px 10px;
+  color           : #111;
+  background-color: #b2936d;
+  font-weight     : 400;
+  padding         : 10px 20px;
+  display         : inline-block;
+}
+
+.content-notfound>p {
+  color    : #fff;
+  font-size: 1.2rem;
+  margin   : 10px 10px 40px 10px;
+}
+
+.content-notfound>a {
+  position             : relative;
+  padding              : 13px 32px;
+  -webkit-box-sizing   : content-box;
+  -moz-box-sizing      : content-box;
+  box-sizing           : content-box;
+  width                : 120px;
+  height               : 35px;
+  cursor               : pointer;
+  border               : 3px solid #b2936d;
+  -webkit-border-radius: 40px;
+  border-radius        : 40px;
+  color                : #b2936d;
+  text-align           : center;
+  -o-text-overflow     : clip;
+  text-overflow        : clip;
+  letter-spacing       : 1px;
+  background           : rgba(0, 0, 0, 0);
+  -webkit-transition   : background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -moz-transition      : background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  -o-transition        : background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  transition           : background-color 0.3s cubic-bezier(0, 0, 0, 0), color 0.3s cubic-bezier(0, 0, 0, 0), width 0.3s cubic-bezier(0, 0, 0, 0), border-width 0.3s cubic-bezier(0, 0, 0, 0), border-color 0.3s cubic-bezier(0, 0, 0, 0);
+  text-decoration      : none;
+}
+
+.content-notfound>a:hover {
+  color           : #fff;
+  background-color: #001D26;
+}
+
+.content-notfound>a:active {
+  border            : 2px solid #001D26;
+  background        : #001D26;
+  -webkit-transition: none;
+  -moz-transition   : none;
+  -o-transition     : none;
+  transition        : none;
+}
+
 /* ------------------------------------------------------------------------------------------------------------ */
 
 /* MEDIA QUERIES */
@@ -1110,7 +1191,7 @@ div .go-login-register {
     width          : 100%;
     height         : -webkit-fill-available;
     transform      : translateX(-100%);
-    z-index: 1000;
+    z-index        : 1000;
   }
 
   .link-nav {
@@ -1215,10 +1296,20 @@ div .go-login-register {
   }
 }
 
+@media screen and (max-height: 570px) and (orientation: landscape) {
+  .content-notfound>h2 {
+    font-size: 9rem;
+  }
+}
+
 @media screen and (max-width: 546px) {
   .scroll-top {
     bottom: 30px;
     right : 15px;
+  }
+
+  .content-notfound>h2 {
+    font-size: 9rem;
   }
 }
 
@@ -1245,6 +1336,12 @@ div .go-login-register {
     font-size: 30px;
   }
 
+}
+
+@media screen and (max-height: 480px) and (orientation: landscape) {
+  .content-notfound>h2 {
+    font-size: 5rem;
+  }
 }
 
 @media (max-width: 450px) {

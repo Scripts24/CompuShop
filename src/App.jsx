@@ -13,6 +13,7 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import "./Style.css";
 import ScrollToTop from "./components/ScrollToTop";
+import NotFound from "./components/NotFound"
 
 const App = () => {
   return (
@@ -38,6 +39,7 @@ const App = () => {
             <Route exact path="/item/:id" element={<ItemDetailContainer />} />
             <Route exact path="/cart" element={<Cart />} />
             <Route exact path="/checkout" element={<Checkout />} />
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
           <Footer />
         </BrowserRouter>

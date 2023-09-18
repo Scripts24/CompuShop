@@ -7,17 +7,6 @@
 ### El mismo trata sobre una tienda online de venta de computadoras, que consta de 3 categorías: Notebooks, Gamers y Ofimáticas. Una vez elegida la categoría, ésta mostrará los productos disponibles y de encontrar un producto de interés al hacer click en "Ver detalles" será redirigido a otra pantalla que mostrará la descripción del mismo, pudiendo elegir la cantidad y agregar al carrito para continuar con el proceso de compra, como también volver al catálogo para ver otras productos y si lo desea seguir agregando al carrito.
 ---
 
-## Proyecto en desarrollo
-
-![Navegación por el ecommerce](./src/assets/navegacion.gif)
-
----
-
-## Proyecto finalizado
-
-![Funcionalidad del ecommerce](./src/assets/proyecto-final.gif)
-
----
 ## Recursos utilizados
 
 1. [Visual studio code](https://code.visualstudio.com/)

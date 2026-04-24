@@ -24,6 +24,7 @@
 1. [Squoosh](https://squoosh.app/)
 1. [Adobe colors](https://color.adobe.com/es/create/color-wheel)
 1. [Pure Css Loader](https://loading.io/css/)
+1. [Cloudinary](https://console.cloudinary.com/)
 
 
 ---

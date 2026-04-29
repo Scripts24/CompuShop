@@ -370,6 +370,13 @@ h6 {
   color      : white;
 }
 
+.btn-disabled {
+  opacity: 0.5;
+  background-color: #0f063fbe; /* mismo color base */
+  cursor: not-allowed;
+  transform: none;
+}
+
 /*-- Cart --*/
 
 .cart {

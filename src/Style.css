@@ -293,52 +293,59 @@ h6 {
 /*-- ItemDetail --*/
 
 .container-details {
-  height         : 120vh;
+  min-height     : 100vh;
   display        : flex;
   flex-wrap      : wrap;
   justify-content: center;
   align-items    : center;
-  gap            : 40px;
+  gap            : 0px;
   padding        : 20px;
 }
 
 .img-details {
-  width        : 300px;
-  height       : 200px;
+  max-width    : 220px;
+  height       : auto;
   border-radius: 25px;
 }
 
 .card-details {
-  width          : 500px;
-  height         : 700px;
-  display        : flex;
-  flex-direction : column;
-  justify-content: space-between;
-  align-items    : center;
-  padding        : 15px;
-  border         : 3px solid #001D26;
-  border-radius  : 25px;
-  color          : #001D26;
+  width           : 500px;
+  height          : 550px;
+  display         : flex;
+  flex-direction  : column;
+  justify-content : space-between;
+  align-items     : center;
+  padding         : 10px 15px;
+  border          : 3px solid #001D26;
+  border-radius   : 25px;
+  color           : #001D26;
 }
 
 .card-details .card-titulo {
-  font-size    : 30px;
-  margin-bottom: 10px;
+  font-size: 22px;
 }
 
 .card-details .card-category {
-  font-size    : 25px;
+  font-size: 18px;
+}
+
+.card-details .card-precio,
+.card-details .card-stock,
+.card-details .card-cantidad,
+.card-details .card-description {
+  font-size: 16px;
+}
+
+.card-details .card-description {
   margin-bottom: 10px;
 }
 
+.card-details .card-titulo,
+.card-details .card-category,
 .card-details .card-precio {
-  font-size    : 22px;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
-.card-description {
-  margin-top: 10px;
-}
 
 /*-- ItemCount --*/
 .container-contador {
@@ -351,7 +358,6 @@ h6 {
   display                : flex;
   justify-content        : center;
   align-items            : center;
-  margin-top             : 10px;
   background             : rgba(255, 255, 255, 0.25);
   box-shadow             : 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter        : blur(4px);
@@ -361,9 +367,9 @@ h6 {
 }
 
 .btn-contador {
-  padding    : 10px;
-  margin     : 10px;
-  font-size  : 20px;
+  padding    : 5px;
+  margin     : 8px;
+  font-size  : 16px;
   font-weight: 700;
   cursor     : pointer;
   background : #001D26;
@@ -371,10 +377,11 @@ h6 {
 }
 
 .btn-disabled {
-  opacity: 0.5;
-  background-color: #0f063fbe; /* mismo color base */
-  cursor: not-allowed;
-  transform: none;
+  opacity         : 0.5;
+  background-color: #0f063fbe;
+  /* mismo color base */
+  cursor          : not-allowed;
+  transform       : none;
 }
 
 /*-- Cart --*/
@@ -1362,17 +1369,8 @@ div .go-login-register {
     transform: translateX(-80%) !important;
   }
 
-  .img-details {
-    width : 300px;
-    height: 250px;
-  }
-
   .id-order .gracias {
     font-size: 30px;
-  }
-
-  .card-details {
-    height: 800px;
   }
 
   .cart-empty h2 {

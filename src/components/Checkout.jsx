@@ -3,6 +3,7 @@ import { getFirestore, collection, writeBatch, addDoc, Timestamp, doc } from "fi
 import { Link } from 'react-router-dom'
 import { CartContext } from "../context/CartContext";
 import Loader from "./Loader"
+import emailjs from '@emailjs/browser';
 
 
 const Checkout = () => {
@@ -14,7 +15,7 @@ const Checkout = () => {
 	})
 	const cartContext = useContext(CartContext);
 	const { cartList, totalBuy, emptyCart } = cartContext;
-	
+
 
 
 	const handleChange = (e) => {
@@ -23,68 +24,141 @@ const Checkout = () => {
 			[e.target.name]: e.target.value
 		})
 	}
-	
+
 	const createOrder = (e) => {
 		e.preventDefault();
-		setCreatingOrder(true)
-		delete formData.emailConfirm
-		let order = {}
-		order.date = Timestamp.fromDate(new Date())
-		order.buyer = formData
-		order.total = totalBuy()
+		setCreatingOrder(true);
+
+		const order = {};
+
+		order.date = Timestamp.fromDate(new Date());
+		order.buyer = {
+			name: formData.name,
+			email: formData.email,
+			phone: formData.phone
+		};
+
+		order.total = totalBuy();
 
 		order.items = cartList.map(cartItem => {
-			const id = cartItem.id
-			const title = cartItem.title
-			const price = cartItem.price
-			const quantity = cartItem.quantity
-			const totalPrice = cartItem.price * cartItem.quantity
-			return { id, title, price, quantity, totalPrice }
-		})
+			const id = cartItem.id;
+			const title = cartItem.title;
+			const price = cartItem.price;
+			const quantity = cartItem.quantity;
+			const totalPrice = price * quantity;
 
-		const db = getFirestore()
-		const orderCollection = collection(db, 'orders')
+			return { id, title, price, quantity, totalPrice };
+		});
+
+		const productosTexto = order.items.map(item =>
+			`• ${item.title}
+	Cantidad: ${item.quantity}
+	Subtotal: $${item.totalPrice}
+	`
+		).join('\n');
+
+		const db = getFirestore();
+		const orderCollection = collection(db, 'orders');
+
 		addDoc(orderCollection, order)
-			.then(resp => setOrderId(resp.id))
+			.then(resp => {
+
+				setOrderId(resp.id);
+
+				// 📩 EMAIL ADMIN
+				emailjs.send(
+					'compushop_service',
+					'template_5gvgg9l',
+					{
+						orderId: resp.id,
+						name: formData.name,
+						phone: formData.phone,
+						email: formData.email,
+						productos: productosTexto,
+						total: totalBuy(),
+						fecha: new Date().toLocaleString()
+					},
+					'or9iSjgH7pinttlXJ'
+				)
+					.then(() => {
+						console.log('Email admin enviado');
+					})
+					.catch((error) => {
+						console.error('Error email admin:', error);
+					});
+
+
+				// 📩 EMAIL CLIENTE
+				emailjs.send(
+					'compushop_service',
+					'template_qkzxw1g',
+					{
+						orderId: resp.id,
+						name: formData.name,
+						email: formData.email,
+						productos: productosTexto,
+						total: totalBuy()
+					},
+					'or9iSjgH7pinttlXJ'
+				)
+					.then(() => {
+						console.log('Email cliente enviado');
+					})
+					.catch((error) => {
+						console.error('Error email cliente:', error);
+					});
+
+			})
 			.catch(err => console.log(err))
 			.finally(() => {
-				setCreatingOrder(false)
-				updateStock()
-				emptyCart()
+
+				setCreatingOrder(false);
+
+				updateStock();
+
+				emptyCart();
+
 				setFormData({
-					name: "", email: "", emailConfirm: "", phone: ""
-				})
-				{
-					Toastify({
-						text: (`Compra realizada exitosamente ✔`),
-						position: "center",
-						gravity: "top",
-						duration: 3000,
-						style: {
-							background: "#548C1C",
-							marginTop: "60px",
-							padding: "20px",
-							fontSize: "20px"
-						},
-					}).showToast()
-				}
-			})
+					name: "",
+					email: "",
+					emailConfirm: "",
+					phone: ""
+				});
 
+				Toastify({
+					text: `Compra realizada exitosamente ✔`,
+					position: "center",
+					gravity: "top",
+					duration: 3000,
+					style: {
+						background: "#548C1C",
+						marginTop: "60px",
+						padding: "20px",
+						fontSize: "20px"
+					},
+				}).showToast();
+
+			});
 		function updateStock() {
-			const batch = writeBatch(db)
 
-			order.items.map(el => {
-				let updateDoc = doc(db, 'computadoras', el.id)
-				let currentStock = cartList.find(item => item.id === el.id).stock
+			const batch = writeBatch(db);
+
+			order.items.forEach(el => {
+
+				let updateDoc = doc(db, 'computadoras', el.id);
+
+				let currentStock = cartList.find(item => item.id === el.id).stock;
 
 				batch.update(updateDoc, {
 					stock: currentStock - el.quantity
-				})
-			})
+				});
 
-			batch.commit()
+			});
+
+			batch.commit();
 		}
 	}
+
 	return (
 		<>
 			{creatingOrder
@@ -143,7 +217,7 @@ const Checkout = () => {
 									<span className="input-helper">Campo requerido</span>
 									<span className="input-helper">Formato incorrecto</span>
 								</div>
-								<div><input type="submit" className="input" value="Procesar orden de compra" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm } /></div>
+								<div><input type="submit" className="input" value="Procesar orden de compra" disabled={!formData.name || !formData.phone || !formData.email || formData.email !== formData.emailConfirm} /></div>
 								<div><input type="reset" className="input" value="Reset" /></div>
 								<Link to={"/"} className="buttons" >
 									<button>Regresar</button>

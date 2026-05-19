@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "firebase": "^9.18.0",
     "install": "^0.13.0",
     "react": "^18.2.0",
